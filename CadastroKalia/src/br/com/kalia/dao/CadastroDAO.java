@@ -71,7 +71,7 @@ public class CadastroDAO {
                 pp1.setObjeto(res.getString("objeto"));
                 pp1.setTipo(res.getString("tipo"));
                 pp1.setRequisitante(res.getString("requisitante"));               
-                //pp1.setDataDevolucao(res.getDate(dataDevolucao));
+                pp1.setDataDevolucao(dataDevolucao);
                 pp1.setContato(res.getString("contato"));
                 
                 ll.add(pp1);                
