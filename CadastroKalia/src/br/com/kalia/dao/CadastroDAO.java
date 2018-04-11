@@ -22,13 +22,15 @@ public class CadastroDAO {
 		boolean result = false;
 		try {
 			PreparedStatement stmt = conexao.prepareStatement("INSERT INTO cadastro "  +
-			" (objeto, tipo, requisitante, data_devolucao, contato) " + 
-			" Values (?, ?, ?, ?, ?)") ;
-			stmt.setString(1, cad.getObjeto());
-			stmt.setString(6, cad.getTipo());
-			stmt.setString(7, cad.getRequisitante());
-			stmt.setString(8, cad.getContato());
-			stmt.setDate(2, new java.sql.Date(cad.getDataDevolucao().getTime()));
+			" (objeto, tipo, requisitante, data_emprestimo, data_devolucao, contato) " + 
+			" Values (?, ?, ?, ?, ?, ?)") ;
+			int count = 1;
+			stmt.setString(count++, cad.getObjeto());
+			stmt.setString(count++, cad.getTipo());
+			stmt.setString(count++, cad.getRequisitante());
+			stmt.setDate(count++, converteData(cad.getDataEmprestimo()));
+			stmt.setDate(count++, converteData(cad.getDataDevolucao()));
+			stmt.setString(count++, cad.getContato());
 		
 			if(stmt.executeUpdate() > 0){
 				result = true;
@@ -42,6 +44,10 @@ public class CadastroDAO {
 		ConnectionFactory.FecharConexao();
 		
 		return result;
+	}
+	
+	private java.sql.Date converteData(Date dataUtil) {
+		return new java.sql.Date(dataUtil.getTime());
 	}
 	
 	public static String dataForSQL(String Data){
