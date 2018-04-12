@@ -31,7 +31,7 @@
                   
                </ul>
             </div>
-            <!-- /.navbar-collapse -->
+            <!-- /.navbar-collapse-->
          </div>
          <!-- /.container-fluid -->
       </nav>
@@ -39,38 +39,46 @@
       <br>
       <br>
       <div class="col-md-4 col-md-offset-4">
-      <form class="form-horizontal" method="POST" action="/fametrodevweb/CadastroPaciente">
+      <form class="form-horizontal" method="POST" action="/CadastroKalia/NovoCadastro">
          <div class="form-group">
             <label class="col-md-4 control-label">Objeto</label>  
-            <div class="col-md-5"><!--inputCadNome-->
+            <div class="col-md-5">
                <input id="inputCadObjeto" name="inputCadObjeto" type="text" placeholder="Ex: Livro, CD, DVD, Revista." class="form-control input-md" required>
             </div>
          </div>
          <div class="form-group">
             <label class="col-md-4 control-label">Tipo</label>  
-            <div class="col-md-5"><!--inputCadAltura-->
-                <input id="inputCadTipo" name="inputCadAltura" type="text" placeholder="Ex: Impresso, Mídia" class="form-control input-md" required>           
+            <div class="col-md-5">
+                <input id="inputCadTipo" name="inputCadTipo" type="text" placeholder="Ex: Impresso, Mídia" class="form-control input-md" required>           
             </div>
          </div>
          <div class="form-group">
             <label class="col-md-4 control-label">Para quem emprestou:</label>  
-            <div class="col-md-5"><!--inputCadPeso-->
-               <input id="inputCadRequisitante" name="inputCadPeso" type="text" placeholder="Informe o nome do requisitante" class="form-control input-md" required> 
+            <div class="col-md-5">
+               <input id="inputCadRequisitante" name="inputCadRequisitante" type="text" placeholder="Informe o nome do requisitante" class="form-control input-md" required> 
+            </div>
+         </div>
+         <div class="form-group">
+            <label class="col-md-4 control-label">Data de empréstimo</label>  
+            <div class="col-md-5">
+            	<input id="inputCadEmprestimo" name="inputCadEmprestimo" type="date" placeholder="Informe a data de hoje" class="form-control input-md" required>
             </div>
          </div>
          <div class="form-group">
             <label class="col-md-4 control-label">Data de devolução</label>  
             <div class="col-md-5"><!--inputCadIdade-->
-            	<input id="inputCadDevolucao" name="inputCadIdade" type="date" placeholder="Informe a data de devolução" class="form-control input-md" required>
+            	<input id="inputCadDevolucao" name="inputCadDevolucao" type="date" placeholder="Informe a data de devolução" class="form-control input-md" required>
             </div>
          </div>
           <div class="form-group">
-            <label class="col-md-4 control-label">Contato</label>  
+            <label class="col-md-4 control-label">Email</label>  
             <div class="col-md-5"><!--inputCadAltura-->
-                <input id="inputCadContato" name="inputCadAltura" type="text" placeholder="Ex: 85988990088" class="form-control input-md" required>           
+                <input id="inputCadEmail" name="inputCadEmail" type="text" placeholder="Ex: usuario@servidor.com" class="form-control input-md" required>           
             </div>
          </div>
-         
+		
+		
+			         
          <div class="form-group">
             <label class="col-md-4 control-label" for="button1id"></label>
             <div class="col-md-8">

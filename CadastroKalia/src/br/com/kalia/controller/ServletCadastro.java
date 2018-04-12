@@ -26,17 +26,20 @@ public class ServletCadastro extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HashMap<String, String> mapper = new HashMap<String, String>();
+		
+		
 		mapper.put("objeto", request.getParameter("inputCadObjeto"));
 		mapper.put("tipo", request.getParameter("inputCadTipo"));
 		mapper.put("requisitante", request.getParameter("inputCadRequisitante"));
+		mapper.put("dataEmpretimo", request.getParameter("inputCadEmprestimo"));
 		mapper.put("dataDevolucao", request.getParameter("inputCadDevolucao"));
-		mapper.put("contato", request.getParameter("inputCadContato"));
+		mapper.put("email", request.getParameter("inputCadEmail"));
 						
 		try {
 			boolean resultado = CadastroServico.inserirCadastro(mapper);
 			if(resultado){
 				request.setAttribute("mensagem", "Cadastro inserido com sucesso!");
-				request.getRequestDispatcher("home.jsp").forward(request, response);
+				request.getRequestDispatcher("listaresultado.jsp").forward(request, response);
 				System.out.println("cadastro inserido com sucesso!");
 			}else{
 				request.setAttribute("mensagem", "Erro ao inserir cadastro!");

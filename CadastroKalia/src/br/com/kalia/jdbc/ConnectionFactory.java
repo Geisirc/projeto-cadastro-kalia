@@ -16,7 +16,7 @@ public class ConnectionFactory {
 	}
 	
 
-    public static boolean FecharConexao() throws ClassNotFoundException {
+    public static boolean fecharConexao() throws ClassNotFoundException {
  
         try { 
             ConnectionFactory.abrirConexao().close();

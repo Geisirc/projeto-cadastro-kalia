@@ -3,18 +3,24 @@ package br.com.kalia.model;
 import java.util.Date;
 
 public class Cadastro {
-	private int idCadastro;
+	private int idRequisitante;
 	private String objeto;
 	private String tipo;
 	private String requisitante;
-	private Date dataDevolucao;
-	private String contato;
-	public int getIdCadastro() {
-		return idCadastro;
+	private String dataEmprestimo;
+	private String dataDevolucao;
+	private String email;
+	
+	
+	public void setidRequisitante(int idCadidRequisitanteastro) {
+		this.idRequisitante = idCadidRequisitanteastro;
 	}
-	public void setIdCadastro(int idCadastro) {
-		this.idCadastro = idCadastro;
+	
+	public int getIdRequisitante() {
+		return idRequisitante;
 	}
+	
+	
 	public String getObjeto() {
 		return objeto;
 	}
@@ -33,17 +39,25 @@ public class Cadastro {
 	public void setRequisitante(String requisitante) {
 		this.requisitante = requisitante;
 	}
-	public Date getDataDevolucao() {
+	
+	public String getDataEmprestimo() {
+		return dataEmprestimo;
+	}
+	public void setDataEmprestimo(String dataEmprestimo) {
+		this.dataEmprestimo = dataEmprestimo;
+	}
+	
+	public String getDataDevolucao() {
 		return dataDevolucao;
 	}
-	public void setDataDevolucao(Date dataDevolucao) {
+	public void setDataDevolucao(String dataDevolucao) {
 		this.dataDevolucao = dataDevolucao;
 	}
-	public String getContato() {
-		return contato;
+	public String getEmail() {
+		return email;
 	}
-	public void setContato(String contato) {
-		this.contato = contato;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	
