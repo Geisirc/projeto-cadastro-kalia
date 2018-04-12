@@ -22,19 +22,19 @@ public class CadastroDAO {
 		boolean result = false;
 		try {
 			PreparedStatement stmt = conexao.prepareStatement("INSERT INTO cadastro "  +
-<<<<<<< HEAD
+
 			" (objeto, tipo, requisitante, data_emprestimo, data_devolucao, email) " + 
 			" Values (?, ?, ?, ?, ?, ?)") ;
 			
-=======
+
 			" (objeto, tipo, requisitante, data_emprestimo, data_devolucao, contato) " + 
 			" Values (?, ?, ?, ?, ?, ?)") ;
->>>>>>> 4b1c81a6a54aa4e02faf50c5ae86610a73729c2d
+
 			int count = 1;
 			stmt.setString(count++, cad.getObjeto());
 			stmt.setString(count++, cad.getTipo());
 			stmt.setString(count++, cad.getRequisitante());
-<<<<<<< HEAD
+
 			stmt.setString(count++, cad.getDataEmprestimo());
 			stmt.setString(count++, cad.getDataDevolucao());
 			stmt.setString(count++, cad.getRequisitante());
@@ -44,11 +44,11 @@ public class CadastroDAO {
 			//stmt.setDate(count++, converteData(cad.getDataDevolucao()));
 			
 			
-=======
+
 			stmt.setDate(count++, converteData(cad.getDataEmprestimo()));
 			stmt.setDate(count++, converteData(cad.getDataDevolucao()));
 			stmt.setString(count++, cad.getContato());
->>>>>>> 4b1c81a6a54aa4e02faf50c5ae86610a73729c2d
+
 		
 			if(stmt.executeUpdate() > 0){
 				result = true;
@@ -67,13 +67,12 @@ public class CadastroDAO {
 	private java.sql.Date converteData(Date dataUtil) {
 		return new java.sql.Date(dataUtil.getTime());
 	}
-<<<<<<< HEAD
-=======
+
 	
 	public static String dataForSQL(String Data){
     	return Data.substring(8, 10) + "-" + Data.substring(5, 7) + "-" + Data.substring(0, 4);
     }
->>>>>>> 4b1c81a6a54aa4e02faf50c5ae86610a73729c2d
+
 	
 	public List<Cadastro> buscar(String pesquisa) throws ClassNotFoundException, ParseException{
 		
@@ -97,16 +96,16 @@ public class CadastroDAO {
                 //pp1.getIdRequisitante(Integer.parseInt(res.getString("idRequisitante"));
                 pp1.setObjeto(res.getString("objeto"));
                 pp1.setTipo(res.getString("tipo"));
-<<<<<<< HEAD
+
                 pp1.setRequisitante(res.getString("requisitante"));
                 pp1.setDataEmprestimo(res.getString("data_emprestimo"));
                 pp1.setDataDevolucao(res.getString("dataDevolucao"));
                 pp1.setEmail(res.getString("email"));
-=======
+
                 pp1.setRequisitante(res.getString("requisitante"));               
                 pp1.setDataDevolucao(dataDevolucao);
                 pp1.setContato(res.getString("contato"));
->>>>>>> 4b1c81a6a54aa4e02faf50c5ae86610a73729c2d
+
                 
                 ll.add(pp1);                
             }
@@ -126,8 +125,8 @@ public class CadastroDAO {
 	}
 	
 
-	//MÈtodo utilizado para modificar dados dos usu·rio. Esse mÈtodo
-	//recebe os dados j· alterados e envia pro banco.
+	//M√©todo utilizado para modificar dados dos usu√°rio. Esse m√©todo
+	//recebe os dados j√° alterados e envia pro banco.
 	public static Cadastro editaUsuario(Cadastro usuario) throws ClassNotFoundException{
 		Connection conexao = ConnectionFactory.abrirConexao();
 		PreparedStatement ps=null;
@@ -154,7 +153,7 @@ public class CadastroDAO {
 
 	
 
-	//MÈtodo utilizado para excluir usuarios
+	//M√©todo utilizado para excluir usuarios
 	public static Cadastro excluirUsuario(String id) throws ClassNotFoundException {
 		
 		int cod_usuario = Integer.parseInt(id);
