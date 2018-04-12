@@ -31,7 +31,7 @@ public class ServletCadastro extends HttpServlet {
 		mapper.put("objeto", request.getParameter("inputCadObjeto"));
 		mapper.put("tipo", request.getParameter("inputCadTipo"));
 		mapper.put("requisitante", request.getParameter("inputCadRequisitante"));
-		mapper.put("dataEmpretimo", request.getParameter("inputCadEmprestimo"));
+		mapper.put("dataEmprestimo", request.getParameter("inputCadEmprestimo"));
 		mapper.put("dataDevolucao", request.getParameter("inputCadDevolucao"));
 		mapper.put("email", request.getParameter("inputCadEmail"));
 						
@@ -46,12 +46,10 @@ public class ServletCadastro extends HttpServlet {
 				request.getRequestDispatcher("cadastro.jsp").forward(request, response);
 				System.out.println("erro ao inserir cadastro!");
 			}	
-		} catch (ClassNotFoundException | ParseException e) {
-			
-			e.printStackTrace();
+		} catch (ClassNotFoundException | ParseException e) {			
 			request.setAttribute("mensagem", "Erro ao inserir cadastro!");
 			request.getRequestDispatcher("cadastro.jsp").forward(request, response);
-			System.out.println("erro ao inserir cadastro!");
+			System.out.println("erro ao inserir cadastro!" + e.printStackTrace());
 		}	
 	}
 
